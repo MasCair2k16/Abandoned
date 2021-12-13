@@ -145,7 +145,6 @@
 				3939497EDAA89ACBDDCB2670 /* Pods-Abandoned-AbandonedTests.debug.xcconfig */,
 				EE9B4E77F9B0FA18C6405013 /* Pods-Abandoned-AbandonedTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -485,6 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6Z838FA63Y;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Abandoned/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -511,6 +511,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6Z838FA63Y;
 				INFOPLIST_FILE = Abandoned/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
