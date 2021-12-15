@@ -8,81 +8,46 @@
 
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { BottomNavigation } from 'react-native-paper';
+import { Colors } from './src/styles/index';
 import {
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section = ({ children, title }) => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
-
 const App = () => {
-  const backgroundStyle = {
-    backgroundColor: Colors.lighter,
-  };
+  // const MapRoute = () => <Text>Map</Text>;
+  // const ListRoute = () => <Text>List</Text>;
+  // const FindsRoute = () => <Text>Finds</Text>;
+  // const SettingRoute = () => <Text>Setting</Text>;
+
+  // const [index, setIndex] = React.useState(0);
+  // const [routes] = React.useState([
+  //   { key: 'map', title: 'Map', icon: 'map' },
+  //   { key: 'list', title: 'List', icon: 'list' },
+  //   { key: 'finds', title: 'Finds', icon: 'star' },
+  // ]);
+
+  // const renderScene = BottomNavigation.SceneMap({
+  //   music: MapRoute,
+  //   albums: ListRoute,
+  //   recents: FindsRoute,
+  //   setting: SettingRoute,
+  // });
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView style={styles.primaryColor}>
       <NavigationContainer>
-        <StatusBar barStyle={'dark-content'} />
+        <StatusBar barStyle={'light-content'} />
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
-          style={backgroundStyle}>
-          <Header />
-          <View
-            style={{
-              backgroundColor: Colors.white,
-            }}>
-            <Section title="Step One">
-              Edit <Text style={styles.highlight}>App.js</Text> to change this
-              screen and then come back to see your edits.
-            </Section>
-            <Section title="See Your Changes">
-              <ReloadInstructions />
-            </Section>
-            <Section title="Debug">
-              <DebugInstructions />
-            </Section>
-            <Section title="Learn More">
-              Read the docs to discover what to do next:
-            </Section>
-            <LearnMoreLinks />
+          style={styles.primaryColor}>
+          <View style={styles.whiteColor}>
+            <Text style={styles.sectionTitle}>Hello World!</Text>
           </View>
         </ScrollView>
       </NavigationContainer>
@@ -91,6 +56,16 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: Colors.PRIMARY,
+  },
+  primaryColor: {
+    backgroundColor: Colors.PRIMARY,
+  },
+  whiteColor: {
+    backgroundColor: Colors.WHITE,
+  },
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
