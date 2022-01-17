@@ -20,39 +20,59 @@ import {
 } from 'react-native';
 
 const App = () => {
-  // const MapRoute = () => <Text>Map</Text>;
-  // const ListRoute = () => <Text>List</Text>;
-  // const FindsRoute = () => <Text>Finds</Text>;
-  // const SettingRoute = () => <Text>Setting</Text>;
+  const MapRoute = () => <Text>Map</Text>;
 
-  // const [index, setIndex] = React.useState(0);
-  // const [routes] = React.useState([
-  //   { key: 'map', title: 'Map', icon: 'map' },
-  //   { key: 'list', title: 'List', icon: 'list' },
-  //   { key: 'finds', title: 'Finds', icon: 'star' },
-  // ]);
+  const ListRoute = () => <Text>List</Text>;
 
-  // const renderScene = BottomNavigation.SceneMap({
-  //   music: MapRoute,
-  //   albums: ListRoute,
-  //   recents: FindsRoute,
-  //   setting: SettingRoute,
-  // });
+  const trophyRoute = () => <Text>Trophies</Text>;
+
+  const SettingsRoute = () => <Text>Settings</Text>;
+
+  const [index, setIndex] = React.useState(0);
+  const [routes] = React.useState([
+    { key: 'map', title: 'Map', icon: 'map' },
+    { key: 'list', title: 'List', icon: 'format-list-bulleted' },
+    { key: 'trophy', title: 'Trophies', icon: 'trophy' },
+    { key: 'settings', title: 'Settings', icon: 'settings-outline' },
+  ]);
+
+  const renderScene = BottomNavigation.SceneMap({
+    map: MapRoute,
+    list: ListRoute,
+    trophy: trophyRoute,
+    settings: SettingsRoute,
+  });
 
   return (
-    <SafeAreaView style={styles.primaryColor}>
-      <NavigationContainer>
-        <StatusBar barStyle={'light-content'} />
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.primaryColor}>
-          <View style={styles.whiteColor}>
-            <Text style={styles.sectionTitle}>Hello World!</Text>
-          </View>
-        </ScrollView>
-      </NavigationContainer>
-    </SafeAreaView>
+    <BottomNavigation
+      navigationState={{ index, routes }}
+      onIndexChange={setIndex}
+      renderScene={renderScene}
+      barStyle={{ backgroundColor: Colors.PRIMARY }}
+      activeColor={Colors.ASSCENT}
+      safeAreaInsets={{ top: -40 }}
+    />
   );
+
+  // return (
+  //   <SafeAreaView style={styles.primaryColor}>
+  //     <StatusBar barStyle={'light-content'} />
+  //     <NavigationContainer>
+  //       {/* <ScrollView
+  //         contentInsetAdjustmentBehavior="automatic"
+  //         style={styles.primaryColor}>
+  //         <View style={styles.whiteColor}>
+  //           <Text style={styles.sectionTitle}>Hello World!</Text>
+  //         </View>
+  //       </ScrollView> */}
+  //       <BottomNavigation
+  //         navigationState={{ index, routes }}
+  //         onIndexChange={setIndex}
+  //         renderScene={renderScene}
+  //       />
+  //     </NavigationContainer>
+  //   </SafeAreaView>
+  // );
 };
 
 const styles = StyleSheet.create({
